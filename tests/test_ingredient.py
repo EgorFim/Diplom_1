@@ -7,12 +7,12 @@ from praktikum.ingredient import Ingredient
 class TestIngredient:
 
     def test_ingredient_get_price(self,ingredient):
-        assert ingredient.price == 200
+        assert ingredient.get_price() == 200
 
     def test_ingredient_get_name(self,ingredient):
-        assert ingredient.name == 'соус'
+        assert ingredient.get_name() == 'соус'
 
     @pytest.mark.parametrize('type,name,price',sauce)
     def test_ingredient_get_type(self,type,name,price):
         ingredient = Ingredient(type,name,price)
-        assert ingredient.type == 'SAUCE' or 'FILLING'
+        assert ingredient.get_type() == 'SAUCE' or 'FILLING'
